@@ -1,0 +1,5 @@
+<%= form_with model: @post do |form| %>
+  <%= form.label(:body, "Body:") %>
+  <%= form.text_area :body %><br><br>
+  <%= form.submit("Submit") %>
+<% end %>

@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
+<%= link_to "New Post", new_post_url %>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <% if user_signed_in? %>
+        <%= post.user.email %>:
+      <% end %>
+      <%= post.body %>
+    </li>
+  <% end %>
+</ul>
